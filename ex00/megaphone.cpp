@@ -25,10 +25,7 @@ static std::string	argv_to_string(int argc, char **argv)
 static std::string	ft_capitalize(std::string str)
 {
 	for (int i = 0; str[i]; i++)
-	{
-		if (std::isalpha(str[i]))
 			str[i] = std::toupper(str[i]);
-	}
 	return (str);
 }
 
