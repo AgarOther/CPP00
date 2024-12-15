@@ -3,10 +3,12 @@ CC					=	c++
 CFLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 # Names
-NAME				=	megaphone
+NAME				=	phonebook
 
 # Sources & Includes
-SRCS				= 	megaphone.cpp
+SRCS				= 	Contact.cpp \
+						PhoneBook.cpp \
+						main.cpp
 OBJ_FOLDER			=	objs
 
 # Objects
