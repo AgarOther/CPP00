@@ -6,15 +6,31 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 01:53:03 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/12/15 01:57:25 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/12/17 23:38:33 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	(void)ac;
-	(void)av;
 	PhoneBook book;
+	std::string	input;
+
+	while (input != "EXIT" && !std::cin.eof())
+	{
+		std::cout << "phonebook> ";
+		std::getline(std::cin, input);
+		if (input == "ADD")
+			book.add();
+		else if (input == "SEARCH")
+			book.search();
+		else if (input != "EXIT")
+			std::cout << "Invalid arguments. Valid entries are: ADD | SEARCH | EXIT" << std::endl;
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (0);
+		}
+	}
 }
