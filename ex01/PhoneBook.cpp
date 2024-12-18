@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 01:50:40 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/12/17 23:39:18 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/12/18 23:57:29 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void	PhoneBook::search(void)
 		std::cout << std::endl << "Your PhoneBook has no contacts yet!" << std::endl;
 		return ;
 	}
+	print_contacts(this->_contacts);
 	std::cout << std::endl << "Please provide a contact ID: ";
 	while (!std::cin.eof() && tmp == "")
 		std::getline(std::cin, tmp);

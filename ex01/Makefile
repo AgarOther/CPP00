@@ -8,6 +8,7 @@ NAME				=	phonebook
 # Sources & Includes
 SRCS				= 	Contact.cpp \
 						PhoneBook.cpp \
+						PhoneBookUtils.cpp \
 						main.cpp
 OBJ_FOLDER			=	objs
 
