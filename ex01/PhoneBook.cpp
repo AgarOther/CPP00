@@ -33,7 +33,7 @@ void	PhoneBook::add(void)
 	if (this->_index > 7)
 	{
 		this->_index = 0;
-		std::cout << "[INFO] Contact list is full! Overwriting contact #1.";
+		std::cout << "[INFO] Contact list is full! Overwriting contact #1." << std::endl;
 	}
 	else if (this->_index == -1)
 	{
@@ -96,10 +96,10 @@ void	PhoneBook::add(void)
 		return ;
 	
 	// Empty fields check
-	if (contact.get_first_name() == "" || contact.get_last_name() == "" || contact.get_nick_name() == ""
-			|| contact.get_phone_number() == "" || contact.get_secret() == "")
+	if (is_empty(contact.get_first_name()) || is_empty(contact.get_last_name()) || is_empty(contact.get_nick_name())
+			|| is_empty(contact.get_phone_number()) || is_empty(contact.get_secret()))
 	{
-		std::cout << "You can't have empty infos in your contact! Aborting.";
+		std::cout << "You can't have empty infos in your contact! Aborting." << std::endl;
 		// Setting index back to -1 so SEARCH returns no contacts if book previously had none
 		if (was_new)
 			this->_index = -1;
@@ -136,6 +136,7 @@ void	PhoneBook::search(void)
 			return ;
 		}
 		contact = this->_contacts[id - 1];
+		std::cout << "Index: " << id << std::endl;
 		std::cout << "First name: " << contact.get_first_name() << std::endl;
 		std::cout << "Last name: " << contact.get_last_name() << std::endl;
 		std::cout << "Nickname: " << contact.get_nick_name() << std::endl;
@@ -144,7 +145,9 @@ void	PhoneBook::search(void)
 	}
 	else
 	{
-		std::cout << "Wrong input. Please only enter a digit between 1 and 8." << std::endl;
+		std::cout << std::endl << "Wrong input. Please only enter a digit between 1 and 8." << std::endl;
+		if (std::cin.eof())
+			return ;
 		this->search();
 	}
 }

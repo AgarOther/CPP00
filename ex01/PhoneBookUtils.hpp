@@ -13,5 +13,8 @@
 #ifndef PHONEBOOKUTILS_HPP
 # define PHONEBOOKUTILS_HPP
 # include "PhoneBook.hpp"
+
 void	print_contacts(Contact contacts[8]);
+bool	is_empty(std::string str);
+
 #endif
